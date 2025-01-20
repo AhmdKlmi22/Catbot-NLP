@@ -1,0 +1,87 @@
+/* Tambahkan ke file CSS Anda */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-in-out;
+  -webkit-transition: max-height 1s ease-in-out;
+  -moz-transition: max-height 1s ease-in-out;
+  -ms-transition: max-height 1s ease-in-out;
+  -o-transition: max-height 1s ease-in-out;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px; /* Sesuaikan tinggi maksimum */
+}
+
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 10s linear infinite;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #000; /* Ubah warna sesuai keinginan */
+}
+
+.loading-animation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.wave-dots {
+  display: flex;
+  gap: 10px;
+}
+
+.wave-dots::before,
+.wave-dots::after,
+.wave-dots span {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: #000;
+  border-radius: 50%;
+  animation: dotWave 1.2s infinite ease-in-out;
+}
+
+.wave-dots::before {
+  animation-delay: 0s;
+}
+
+.wave-dots span {
+  animation-delay: 0.2s;
+}
+
+.wave-dots::after {
+  animation-delay: 0.4s;
+}
+
+@keyframes dotWave {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}

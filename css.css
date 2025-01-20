@@ -1,0 +1,541 @@
+/* Global Styles */
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #ef755a ;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.testmonial_wrap {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+.single_testmonial {
+  display: flex;
+  align-items: center;
+}
+.section_title {
+  text-align: center;
+  margin-bottom: 95px;
+}
+
+.section_heading {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.section_heading::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background-color: #ffa416;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.section_subheading {
+  font-size: 1.2em;
+  color: #555;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+.diagnose-heading {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.catbot-highlight {
+  color: #FFA416;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.slider_text p {
+  font-size: 1.2em;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.boxed-btn4 {
+  background-color: #FFA416;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.boxed-btn4:hover {
+  background-color: #FFBC54;
+  color: #fff;
+}
+
+
+.test_thumb img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.test_content h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 5px 0;
+}
+
+.test_content span {
+  display: block;
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.test_content p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
+
+
+
+
+
+/* animasi mic */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex; /* Mengubah dari 'none' ke 'flex' untuk menampilkan overlay */
+  justify-content: center; /* Menjaga popup berada di tengah secara horizontal */
+  align-items: center; /* Menjaga popup berada di tengah secara vertikal */
+  z-index: 9999;
+}
+
+.popup-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  position: relative;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-icon {
+  color: #e74c3c;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.info-icon {
+  color: #3498db;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* batas animasi mic */
+
+/* Chat Container */
+.container-fluid {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Area Chat */
+.chat_container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease; /* Transisi untuk chat_container */
+}
+
+/* Custom Scrollbar untuk Kontainer dengan Overflow */
+.contacts_body,
+.msg_card_body {
+  scrollbar-width: thin;
+  /*Ukurantipisuntukscrollbar*/
+  scrollbar-color: rgba(246, 246, 247, 0.8) transparent;
+}
+
+.contacts_body::-webkit-scrollbar,
+.msg_card_body::-webkit-scrollbar {
+  width: 10px; /* Lebar scrollbar */
+}
+
+.contacts_body::-webkit-scrollbar-track,
+.msg_card_body::-webkit-scrollbar-track {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Track transparan dengan sentuhan putih */
+  border-radius: 10px; /* Membuat sudut track melengkung */
+}
+
+.contacts_body::-webkit-scrollbar-thumb,
+.msg_card_body::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    45deg,
+    rgba(255, 136, 136, 0.9),
+    /* Merah muda cerah */ rgba(255, 223, 136, 0.9),
+    /* Kuning emas */ rgba(136, 255, 136, 0.9) /* Hijau cerah */
+  ); /* Gradasi dinamis */
+  border-radius: 10px; /* Membuat sudut thumb melengkung */
+}
+
+.contacts_body::-webkit-scrollbar-thumb:hover,
+.msg_card_body::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    45deg,
+    rgba(136, 255, 136, 1),
+    /* Hijau lebih cerah */ rgba(136, 208, 255, 1),
+    /* Biru langit */ rgba(255, 136, 255, 1) /* Ungu cerah */
+  ); /* Warna gradasi saat hover */
+}
+
+/* Gaya untuk Card */
+.card {
+  border-radius: 0 !important;
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  -ms-border-radius: 0 !important;
+  -o-border-radius: 0 !important;
+}
+
+.card-header {
+  background-color: #7a1e0a ;
+  height: 70px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  font-size: 18px;
+}
+
+/* Pesan Bot dan User */
+.msg_cotainer,
+.msg_cotainer_send {
+  max-width: 70%;
+  word-wrap: break-word;
+  word-break: break-word;
+  padding: 12px;
+  margin: 8px 10px; /* Jarak antar pesan */
+  border-radius: 15px; /* Default rounding */
+  color: #000;
+  font-size: 14px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: justify; /* Tambahkan ini untuk rata kanan-kiri */
+  line-height: 1.6; /* Tambahkan line-height untuk jarak antar baris */
+}
+
+.msg_cotainer {
+  background: linear-gradient(to right, #f75e12, #faa377);
+  border-top-left-radius: 0; /* Hilangkan rounding di sisi kiri atas */
+}
+
+.msg_cotainer_send {
+  background: linear-gradient(to right, #faa377, #f75e12);
+  margin-left: auto; /* Jarak antara ikon dan pesan */
+  border-top-right-radius: 0; /* Hilangkan rounding di sisi kanan atas */
+}
+
+/* Ubah bullet menjadi simbol • */
+.msg_cotainer ul {
+  list-style-type: disc; /* Bullet default menjadi • */
+  padding-left: 20px; /* Memberikan ruang untuk bullet */
+}
+
+.msg_cotainer li {
+  margin-bottom: 5px; /* Jarak antar item */
+}
+/* Waktu Pesan */
+.msg_time,
+.msg_time_send {
+  font-size: 12px;
+  color: #777;
+  align-self: flex-end; /* Posisikan di ujung kanan */
+  margin-top: 5px; /* Jarak atas untuk memberi ruang */
+}
+
+/* Ikon Bot */
+.img_cont_msg,
+.img_cont_msg_send {
+  display: flex;
+  align-items: flex-end; /* Sejajarkan ikon dengan bagian bawah pesan */
+  width: 40px;
+  height: 40px;
+  margin-right: 10px; /* Jarak antara ikon dan pesan bot */
+}
+
+.img_cont_msg_send {
+  margin-left: 0; /* Tambahkan margin kiri untuk menggeser ke kanan */
+}
+
+.img_cont_msg img,
+.img_cont_msg_send img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Tombol Salin dan Speaker */
+.msg_actions {
+  display: flex; /* Menggunakan flexbox untuk menata ikon */
+  gap: 10px; /* Jarak antar ikon */
+  margin-top: 5px; /* Jarak antara pesan dan ikon */
+}
+
+/* Ikon Tombol */
+.copy-button,
+.speaker-button {
+  background: transparent;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.copy-button:hover,
+.speaker-button:hover {
+  color: #000;
+}
+
+/* Area Chat */
+.msg_card_body {
+  flex: 1;
+  overflow-y: auto;
+  background-image: url("/static/img/bg-chat2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+/* Footer */
+.card-footer {
+  background-image: url("/static/img/landing3.png");
+  padding: 10px;
+  border-top: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.type_msg {
+  flex: 1;
+  resize: none;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+  margin-top: -10px;
+  outline: none;
+  height: 40px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.menu-btn {
+  position: absolute;
+  left: 240px;
+  top: 10px;
+  background: #fd6a1f;
+  color: #fff;
+  height: 45px;
+  width: 45px;
+  z-index: 10;
+  border: 1px solid #333;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+#btn:checked ~ .menu-btn {
+  left: 10px;
+}
+.menu-btn i {
+  position: absolute;
+  font-size: 23px;
+  transition: all 0.3s ease;
+}
+.menu-btn i.fa-times {
+  opacity: 0;
+}
+#btn:checked ~ .menu-btn i.fa-bars {
+  opacity: 1;
+  transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+}
+#btn:checked ~ .menu-btn i.fa-times {
+  opacity: 0;
+  transform: rotate(180deg);
+}
+.list-items .icons a:first-child {
+  margin-left: 0px;
+}
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #202020;
+  z-index: -1;
+  width: 100%;
+  text-align: center;
+}
+.content .header {
+  font-size: 45px;
+  font-weight: 700;
+}
+.content p {
+  font-size: 40px;
+  font-weight: 700;
+}
+#btn:checked ~ .contacts {
+  display: none; /* Geser sidebar keluar layar */
+}
+
+.user_info {
+  width: 280px;
+}
+
+@media (min-width: 769px) {
+  .contacts_card {
+    position: relative;
+    height: auto;
+  }
+  .chat_container {
+    display: block; /* Pastikan chat area selalu terlihat */
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    max-width: 100%; /* Full lebar layar */
+    margin: 0; /* Hapus margin */
+    padding: 0; /* Hapus padding */
+  }
+}
+
+@media (max-width: 576px) {
+  .type_msg {
+    font-size: 12px;
+    padding: 8px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 460px) {
+  .wrapper {
+    align-items: center;
+    width: 100%; /* Sidebar menjadi lebar penuh */
+    margin: 0; /* Hapus margin */
+    padding: 0; /* Hapus padding */
+    left: 0; /* Menempel ke sisi kiri */
+    right: 0; /* Menempel ke sisi kanan */
+    position: fixed; /* Tetap di layar meskipun digulir */
+    z-index: 1000; /* Pastikan berada di atas elemen lain */
+    background-color: darkslategray; /* Warna latar sidebar */
+  }
+
+  /* Ketika checkbox #btn dicentang, wrapper bergerak ke kiri menutupi layar */
+  #btn:checked ~ .wrapper {
+    right: 0; /* Wrapper bergerak ke kiri saat tombol ditekan */
+  }
+
+  .menu-btn {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 10; /* Pastikan tombol tetap terlihat di atas */
+  }
+
+  /* Menambahkan efek agar menu tetap bisa dilihat ketika wrapper terbuka */
+  #btn:checked ~ .wrapper .menu-btn {
+    z-index: 11; /* Pastikan tombol tetap di atas wrapper */
+  }
+
+  .user_info {
+    width: 100%; /* Lebar penuh */
+    height: 100%; /* Tinggi penuh */
+    text-align: justify; /* Teks di dalamnya rata tengah */
+    padding: 10px 10px 170px 10px; /* Tambahkan sedikit padding untuk jarak */
+  }
+}

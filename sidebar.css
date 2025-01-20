@@ -1,0 +1,105 @@
+/* Tombol Toggle Sidebar */
+#toggleSidebar {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: black !important;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Menambahkan transform */
+}
+
+#toggleSidebar:hover {
+  background-color: transparent; /* Warna lebih gelap saat hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-50%) scale(1.1); /* Efek membesar saat hover */
+}
+
+/* Ikon pada Toggle Sidebar Membesar Saat Hover */
+#toggleSidebar:hover i {
+  transform: scale(1.5); /* Membesarkan ikon saat hover */
+  transition: transform 0.3s ease; /* Efek transisi halus untuk ikon */
+}
+
+#toggleSidebar i {
+  font-size: 18px;
+  transition: transform 0.3s ease; /* Transisi untuk efek membesar ikon */
+}
+
+/* Sidebar yang Tersembunyi */
+.collapsed #sidebar {
+  transform: translateX(-100%); /* Sidebar tersembunyi */
+}
+
+/* Sidebar Items */
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#sidebar ul li {
+  padding: 15px 20px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease; /* Transisi untuk hover */
+}
+
+#sidebar ul li:hover {
+  background: rgba(255, 255, 255, 0.2); /* Efek hover pada item */
+  transform: translateX(10px); /* Gerakan item ke kanan saat hover */
+}
+
+/* Ikon pada Sidebar Items */
+#sidebar ul li i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+/* Sidebar untuk layar kecil (di bawah 768px) */
+@media (max-width: 768px) {
+  #sidebar {
+    display: none; /* Secara default disembunyikan */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+  }
+
+  #sidebar.show {
+    display: block; /* Sidebar akan tampil saat toggle */
+  }
+
+  #toggleSidebar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1010;
+  }
+
+  .container-fluid {
+    transition: margin-left 0.3s ease;
+  }
+
+  /* Pastikan konten utama tidak tumpang tindih dengan sidebar */
+  .container-fluid.show-sidebar {
+    margin-left: 250px; /* Pindahkan konten utama saat sidebar terbuka */
+  }
+
+  /* Atur animasi sidebar saat toggle */
+  .sidebar-content {
+    transition: transform 0.3s ease;
+  }
+}
+

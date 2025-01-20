@@ -1,0 +1,146 @@
+.profile-image-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 4px solid #555; /* Warna border */
+  border-radius: 50%; /* Membuat gambar bulat */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.contact-list li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.contact-list i {
+  color: #007bff; /* Warna ikon */
+}
+
+h3 a {
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+h3 span {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Cara penggunaan */
+/* Tambahkan border pada gambar */
+/* Gaya dasar untuk gambar */
+.styled-image {
+display: block;
+margin: 0 auto;
+border: 5px solid #f1f1f1; /* Border dasar */
+border-radius: 10px; /* Membulatkan sudut */
+transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, padding 0.4s ease; /* Tambahkan transisi padding */
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Bayangan awal */
+position: relative;
+max-width: 100%; /* Pastikan gambar responsif */
+height: auto; /* Sesuaikan tinggi otomatis */
+}
+
+/* Efek timbul saat kursor mendekat */
+.styled-image:hover {
+transform: translateY(-15px) scale(1.1); /* Membesar dan naik ke atas */
+box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5); /* Bayangan lebih besar */
+border-color: #4caf50; /* Warna border berubah */
+padding: 5px; /* Sesuaikan ukuran padding agar border terlihat */
+z-index: 1; /* Membawa elemen ke atas */
+}
+
+/* Gaya container overlay untuk efek tambahan */
+.work-overlay {
+position: relative;
+overflow: hidden; /* Membatasi elemen dalam container */
+display: inline-block; /* Pastikan container menyelimuti gambar */
+border-radius: 10px; /* Membulatkan sudut container */
+transition: transform 0.4s ease, box-shadow 0.4s ease; /* Transisi untuk efek hover */
+max-width: 100%; /* Pastikan container juga responsif */
+}
+
+/* Overlay efek saat hover */
+.work-overlay:hover::after {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.1); /* Lapisan tipis gelap */
+border-radius: 10px; /* Sesuaikan dengan sudut gambar */
+transition: background 0.4s ease; /* Transisi efek overlay */
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+.styled-image {
+  display: block;
+  margin: 0 auto;
+  border: 5px solid #f1f1f1; /* Border dasar */
+  border-radius: 10px; /* Membulatkan sudut */
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, padding 0.4s ease; /* Tambahkan transisi padding */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Bayangan awal */
+  position: relative;
+  max-width: 100%; /* Pastikan gambar responsif */
+  height: auto; /* Sesuaikan tinggi otomatis */
+}
+
+/* Efek timbul saat kursor mendekat */
+.styled-image:hover {
+  transform: translateY(-15px) scale(1.1); /* Membesar dan naik ke atas */
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5); /* Bayangan lebih besar */
+  border-color: #4caf50; /* Warna border berubah */
+  padding: 5px; /* Sesuaikan ukuran padding agar border terlihat */
+  z-index: 1; /* Membawa elemen ke atas */
+}
+
+/* Gaya container overlay untuk efek tambahan */
+.work-overlay {
+  position: relative;
+  overflow: hidden; /* Membatasi elemen dalam container */
+  display: inline-block; /* Pastikan container menyelimuti gambar */
+  border-radius: 10px; /* Membulatkan sudut container */
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Transisi untuk efek hover */
+  max-width: 100%; /* Pastikan container juga responsif */
+}
+
+/* Overlay efek saat hover */
+.work-overlay:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1); /* Lapisan tipis gelap */
+  border-radius: 10px; /* Sesuaikan dengan sudut gambar */
+  transition: background 0.4s ease; /* Transisi efek overlay */
+}
+}
+
+@media (max-width: 480px) {
+/* Untuk layar ponsel */
+.styled-image:hover {
+  transform: translateY(-5px) scale(1.02); /* Efek lebih minimal */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Bayangan lebih kecil */
+}
+
+.work-overlay:hover::after {
+  background: rgba(0, 0, 0, 0); /* Hilangkan overlay agar lebih bersih */
+}
+}
